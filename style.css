@@ -1,0 +1,168 @@
+/* --- Simple & Clean User Interface --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: #2c3e50;
+}
+
+/* --- Flashcard Flip Animation & Styling --- */
+.card-container {
+  perspective: 1000px;
+  margin: 2rem auto;
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background-color: #e0f7fa;
+  color: #006064;
+  border: 2px solid #b2ebf2;
+}
+
+.card-back {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 2px solid #c8e6c9;
+  transform: rotateY(180deg);
+}
+
+/* --- Buttons & Inputs --- */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 1;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button.danger {
+  background-color: #e74c3c;
+}
+button.danger:hover {
+  background-color: #c0392b;
+}
+
+button.edit {
+  background-color: #f39c12;
+}
+button.edit:hover {
+  background-color: #d68910;
+}
+
+.add-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* --- List Styles --- */
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+}
+
+.list-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.list-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.list-actions button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  flex: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
